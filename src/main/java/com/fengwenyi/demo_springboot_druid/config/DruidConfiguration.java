@@ -1,17 +1,11 @@
 package com.fengwenyi.demo_springboot_druid.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.sql.DataSource;
 
 /**
  * Druid 配置
@@ -20,12 +14,6 @@ import javax.sql.DataSource;
  */
 @Configuration
 public class DruidConfiguration {
-    private Logger logger = LoggerFactory.getLogger(DruidConfiguration.class);
-    @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.druid")
-    public DataSource druidDataSource() {
-        return new DruidDataSource();
-    }
 
     /**
      * 注册一个StatViewServlet
@@ -33,7 +21,7 @@ public class DruidConfiguration {
      * @return
      */
     @Bean
-    public ServletRegistrationBean DruidStatViewServle() {
+    public ServletRegistrationBean druidStatViewServlet() {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),
                 "/druid/*");
         servletRegistrationBean.addInitParameter("loginUsername", "admin");
