@@ -1,6 +1,8 @@
 # SpringBoot整合Druid
 
-## 第一步，添加依赖
+## SpringBoot 整合 Druid
+
+#### 第一步，添加依赖
 
 ```xml
 <!-- spring boot druid -->
@@ -11,7 +13,7 @@
 </dependency>
 ```
 
-## 第二步，属性配置
+#### 第二步，属性配置
 
 ```yaml
 spring:
@@ -51,7 +53,7 @@ spring:
       validation-query: select 'x'
 ```
 
-## 第三步，其他配置
+#### 第三步，其他配置
 
 ```java
 package com.fengwenyi.demo_springboot_druid.config;
@@ -102,5 +104,46 @@ public class DruidConfiguration {
     }
 }
 ```
+
+## 使用
+
+访问路径：`/druid`
+
+## 预览效果
+
+访问地址：`http://localhost:8080/druid`
+
+#### 登录页
+
+![登录](./images/01.png)
+
+#### 首页
+
+![首页](./images/02.png)
+
+#### 数据源
+
+![数据源](./images/03.png)
+
+#### SQL监控
+
+![SQL监控](./images/04.png)
+
+#### SQL防火墙
+
+![SQL防火墙](./images/05.png)
+
+#### Web应用
+
+![Web应用](./images/06.png)
+
+#### URI监控
+
+![URI监控](./images/07.png)
+
+#### SESSION监控
+
+![SESSION监控](./images/08.png)
+
 
 
